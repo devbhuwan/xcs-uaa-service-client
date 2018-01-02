@@ -1,1 +1,0 @@
-# xcs-uaa-service-client

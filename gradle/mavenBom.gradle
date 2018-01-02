@@ -1,0 +1,9 @@
+dependencyManagement {
+    imports {
+        //noinspection GroovyAssignabilityCheck
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+        //noinspection GroovyAssignabilityCheck
+        mavenBom "org.keycloak.bom:keycloak-dependencies-server-all:${keycloakVersion}"
+    }
+}
