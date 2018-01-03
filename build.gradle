@@ -12,8 +12,11 @@ configure(project) {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+    apt("org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}")
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 }
+
+compileJava.dependsOn(processResources)
 
 apply from: "${projectDir}/gradle/mavenBom.gradle"
 
