@@ -1,0 +1,23 @@
+buildscript {
+    apply from: "${projectDir}/gradle/buildscript.gradle", to: buildscript
+}
+
+configure(project) {
+    apply from: "${projectDir}/gradle/applyPlugins.gradle"
+    apply from: "${projectDir}/gradle/repositories.gradle"
+    apply from: "${projectDir}/gradle/docs.gradle"
+    apply from: "${projectDir}/gradle/jacocoReport.gradle"
+}
+
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+    apt("org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}")
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}
+
+compileJava.dependsOn(processResources)
+
+apply from: "${projectDir}/gradle/mavenBom.gradle"
+
+
